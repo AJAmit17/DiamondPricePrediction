@@ -1,40 +1,48 @@
-<html>
-    <head></head>
-    <body>
-    <form action="{{url_for('predict_datapoint')}}" method="POST">
-        <div class="form-group">
-            <label for="carat">Carat:</label>
-            <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Form</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+    <body class="bg-gray-900 text-white p-8">
+    <h1 class="text-center m-4 p-2 text-4xl text-bold">Diamond Price Prediction</h1>
+    <form action="{{url_for('predict_datapoint')}}" method="POST" class="bg-gray-800 p-6 rounded shadow-lg w-96 mx-auto">
+        <div class="form-group mb-4">
+            <label for="carat" class="block font-bold">Carat:</label>
+            <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)" class="w-full text-black">
         </div>
     
-        <div class="form-group">
-            <label for="depth">Depth:</label>
-            <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
+        <div class="form-group mb-4">
+            <label for="depth" class="block font-bold">Depth:</label>
+            <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)" class="w-full text-black">
         </div>
     
-        <div class="form-group">  
-            <label for="table">Table:</label>
-            <input type="text" id="table" name="table" placeholder="Enter table value (float)">
+        <div class="form-group mb-4">  
+            <label for="table" class="block font-bold">Table:</label>
+            <input type="text" id="table" name="table" placeholder="Enter table value (float)" class="w-full text-black">
         </div>
         
-        <div class="form-group">
-            <label for="x">x:</label>
-            <input type="text" id="x" name="x" placeholder="Enter x value (float)">
+        <div class="form-group mb-4">
+            <label for="x" class="block font-bold">x:</label>
+            <input type="text" id="x" name="x" placeholder="Enter x value (float)" class="w-full text-black">
         </div>
       
-        <div class="form-group">
-            <label for="y">y:</label>
-            <input type="text" id="y" name="y" placeholder="Enter y value (float)">
+        <div class="form-group mb-4">
+            <label for="y" class="block font-bold">y:</label>
+            <input type="text" id="y" name="y" placeholder="Enter y value (float)" class="w-full text-black">
         </div>
       
-        <div class="form-group">
-            <label for="z">z:</label>
-            <input type="text" id="z" name="z" placeholder="Enter z value (float)">
+        <div class="form-group mb-4">
+            <label for="z" class="block font-bold">z:</label>
+            <input type="text" id="z" name="z" placeholder="Enter z value (float)" class="w-full text-black">
         </div>         
       
-    <div class="form-group">
-      <label for="cut">Cut:</label>
-      <select id="cut" name="cut">
+    <div class="form-group mb-4">
+      <label for="cut" class="block font-bold">Cut:</label>
+      <select id="cut" name="cut" class="bg-gray-800 w-full">
         <option value="Fair">Fair</option>
         <option value="Good">Good</option>
         <option value="Very Good">Very Good</option>
@@ -43,9 +51,9 @@
       </select>
     </div>
       
-    <div class="form-group">
-      <label for="color">Color:</label>
-      <select id="color" name="color">
+    <div class="form-group mb-4">
+      <label for="color" class="block font-bold">Color:</label>
+      <select id="color" name="color" class="bg-gray-800 w-full">
         <option value="D">D</option>
         <option value="E">E</option>
         <option value="F">F</option>
@@ -56,9 +64,9 @@
       </select>
     </div>
     
-    <div class="form-group">
-      <label for="clarity">Clarity:</label>
-      <select id="clarity" name="clarity">
+    <div class="form-group mb-4">
+      <label for="clarity" class="block font-bold">Clarity:</label>
+      <select id="clarity" name="clarity" class="bg-gray-800 w-full">
         <option value="I1">I1</option>
         <option value="SI2">SI2</option>
         <option value="SI1">SI1</option>
@@ -71,9 +79,14 @@
     </div>
     
     <div style="clear:both;"></div>
-      <input type="submit" value="Submit">
+    <div class="text-center mt-4">
+      <input type="submit" value="Submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+    </div>
     </form>
     
-    {{final_result}}
+    <div class="text-center mt-4 text-4xl">
+      The Price would be ${{final_result}}
+    </div>
     
-    </body></html>
+    </body>
+    </html>
