@@ -4,4 +4,4 @@ seaborn
 flask
 scikit-learn
 gunicorn
--e .
+#-e .
